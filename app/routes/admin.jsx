@@ -1,5 +1,5 @@
 import { Outlet, Link, useLoaderData } from "@remix-run/react";
-import { getPosts } from "~/utils/post";
+import { getUsers } from "~/utils/user";
 // import adminStyles from "~/styles/admin.css";
 
 //create a stylesheet ref for the admin.css file
@@ -8,20 +8,20 @@ import { getPosts } from "~/utils/post";
 // };
 
 export let loader = () => {
-  return getPosts();
+  return getUsers();
 };
 
 export default function Admin() {
-  let posts = useLoaderData();
+  let users = useLoaderData();
   return (
     <div className="admin">
       <h1 className="adminTitle">Admin</h1>
       <nav>
-        <p>Click on a post to edit the blog post</p>
+        <p>Click on a username to edit the user's information</p>
         <ul>
-          {posts.map((post) => (
-            <li key={post.slug}>
-              <Link to={post.slug}>{post.title}</Link>
+          {users.map((user) => (
+            <li key={user.slug}>
+              <Link to={user.slug}>{user.username}</Link>
             </li>
           ))}
         </ul>

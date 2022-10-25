@@ -14,3 +14,10 @@ model posts {
   slug     String
   title    String
 }
+
+model users {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  fullname String
+  slug     String
+  username String
+}
