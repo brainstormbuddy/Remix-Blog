@@ -1,28 +1,28 @@
 import { redirect } from "@remix-run/node";
-import { createUser } from "~/utils/user";
+import { createPost } from "~/utils/post";
 import { Form, useActionData, useTransition } from "@remix-run/react";
 
 export let action = async ({ request }) => {
   let formData = await request.formData();
-  let username = formData.get("username");
+  let title = formData.get("title");
   let slug = formData.get("slug");
-  let fullname = formData.get("fullname");
+  let markdown = formData.get("markdown");
 
   let errors = {};
-  if (!username) errors.username = true;
+  if (!title) errors.title = true;
   if (!slug) errors.slug = true;
-  if (!fullname) errors.fullname = true;
+  if (!markdown) errors.markdown = true;
 
   if (Object.keys(errors).length) {
     return errors;
   }
 
-  await createUser({ username, slug, fullname });
+  await createPost({ title, slug, markdown });
 
   return redirect("/admin");
 };
 
-export default function NewUser() {
+export default function NewPost() {
   // pull in errors from our action using the useActionData() hook
   let errors = useActionData();
   // transition will allow us to create a better user experience by updating the text of the submit button while creating the blog post
@@ -43,26 +43,26 @@ export default function NewUser() {
     <Form method="post">
       <p>
         <label htmlFor="">
-          Username: {errors?.title && <em>Title is required</em>}{" "}
-          <input onChange={handleChange} type="text" name="username" />
+          Post Title: {errors?.title && <em>Title is required</em>}{" "}
+          <input onChange={handleChange} type="text" name="title" />
         </label>
       </p>
       <p>
         <label htmlFor="">
           {" "}
-          User Slug: {errors?.slug && <em>Slug is required</em>}
+          Post Slug: {errors?.slug && <em>Slug is required</em>}
           <input placeholder={slug} id="slugInput" type="text" name="slug" />
         </label>
       </p>
       <p>
-        <label htmlFor="fullname">Fullname:</label>{" "}
-        {errors?.fullname && <em>Fullname is required</em>}
+        <label htmlFor="markdown">Markdown:</label>{" "}
+        {errors?.markdown && <em>Markdown is required</em>}
         <br />
-        <input id="fullname" type="text" name="fullname" />
+        <textarea name="markdown" id="" rows={20} cols={30} />
       </p>
       <p>
         <button type="submit">
-          {transition.submission ? "Creating..." : "Create User"}
+          {transition.submission ? "Creating..." : "Create Post"}
         </button>
       </p>
     </Form>

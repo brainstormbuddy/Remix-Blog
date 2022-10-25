@@ -1,19 +1,19 @@
 import { useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
-import { getUser } from "~/utils/user";
+import { getPost } from "~/utils/post";
 
 export let loader = async ({ params }) => {
   invariant(params.slug, "expected params.slug");
-  return getUser(params.slug);
+  return getPost(params.slug);
 };
 
 export default function PostSlug() {
-  let user = useLoaderData();
-
+  let post = useLoaderData();
+  
   return (
     <div
       className="postDisplay"
-      dangerouslySetInnerHTML={{ __html: user.html }}
+      dangerouslySetInnerHTML={{ __html: post.html }}
     />
   );
 }
