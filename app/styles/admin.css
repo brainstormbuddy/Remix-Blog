@@ -1,0 +1,38 @@
+.admin {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin > h1 {
+    padding-right: 2em;
+}
+
+.admin > nav {
+    flex: 1;
+    border-left: solid 2px #555;
+    padding-left: 2em;
+}
+
+.hiddenBlogID {
+    display: none;
+}
+
+
+.adminNewPostButton{
+    margin-top: 2em;
+    background-color: royalblue;
+    color: white;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+
+
+.adminTitle {
+    font-size: x-large;
+    color: crimson;
+}
+
+.remix-app__header{
+    background-color: rgb(141, 20, 20);
+}

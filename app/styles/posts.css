@@ -1,0 +1,40 @@
+.postTitle{
+    text-decoration: none;
+    color: rebeccapurple;
+}
+
+.postTitle:hover{
+    text-decoration: underline;
+    color: red;
+}
+
+.postList{
+    list-style-type:circle;
+}
+
+.postDisplay  h1, h2, h3 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(rgb(0, 255, 64), rgb(0, 71, 204));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.postDisplay p {
+    font-size: 2em;
+    margin-left: 2em;
+}
+
+.postDisplay ul {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    background-color: whitesmoke;
+    row-gap: 10px;
+    margin-left: 2em;
+}
+
+.postDisplay > ul > li {
+    color: #333;
+    font-size: x-large;
+    list-style-type: decimal-leading-zero;
+}
