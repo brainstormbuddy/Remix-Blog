@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-auth-dev-162945-authRole",
+      "UnauthRoleArn": "arn:aws:iam::734596437779:role/amplify-auth-dev-162945-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::734596437779:role/amplify-auth-dev-162945-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-auth-dev-162945-deployment",
+      "UnauthRoleName": "amplify-auth-dev-162945-unauthRole",
+      "StackName": "amplify-auth-dev-162945",
+      "StackId": "arn:aws:cloudformation:eu-west-2:734596437779:stack/amplify-auth-dev-162945/aaa57410-5c12-11ed-b693-0a6a934cfbce",
+      "AmplifyAppId": "d2vptxiht2m3d3"
+    }
+  },
+  "auth": {
+    "auth578999b2": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-auth-dev-162945-deployment/amplify-cfn-templates/auth/auth578999b2-cloudformation-template.json",
+        "logicalId": "authauth578999b2"
+      },
+      "lastPushTimeStamp": "2022-11-04T07:42:37.056Z",
+      "output": {
+        "UserPoolId": "eu-west-2_dQGmfXoZD",
+        "AppClientIDWeb": "31ks0qha2auqv36e06kvhlrg43",
+        "AppClientID": "7podhkrra55s71f7ffkgi1t9sg",
+        "HostedUIDomain": "remixblog-dev",
+        "IdentityPoolId": "eu-west-2:9a88f3c9-52b5-4b9d-bb28-04dad6f1a581",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-west-2:734596437779:userpool/eu-west-2_dQGmfXoZD",
+        "IdentityPoolName": "auth578999b2_identitypool_578999b2__dev",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+        "UserPoolName": "auth578999b2_userpool_578999b2"
+      },
+      "lastPushDirHash": "iXBd8Uvj1mEl6S8ZQPuEghnykY8="
+    }
+  }
+}
